@@ -1,0 +1,158 @@
+@import url(./feather/css/feather.css);
+body{
+    background-color: #584426;
+}
+.player{
+    position: relative;
+    margin: 0 150px;
+    .video{
+        width: 1080px;
+        height: 720px;
+        background: black;
+        position: relative;
+        // transition: all .5s ease;
+        margin: 0 100px;
+        .controler{
+            background: #cccccca6;
+            width: 100%;
+            height: 50px;
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            z-index: 100;
+            .progressBar{
+                position: absolute;
+                width: 100%;
+                height: 10px;
+                background: #ccc;
+                top: -5px;
+                transition: all .5s ease;
+                .progress{
+                    position: absolute;
+                    top: 0;
+                    width: 0%;
+                    max-width: 100%;
+                    height: 100%;
+                    background-color: #b11b1b;
+                    transition: all .5s ease;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    &::after{
+                        content: "";
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        right: -1px;
+                        left: 98.2%;
+                        top: -6px;
+                        transition: all .5s ease;
+                        border: 1px solid #b11b1b;
+                        background-color: #b11b1b;
+                        border-radius: 50%;
+                    }
+                    
+                }
+            }
+            .play-control{
+                display: inline-block;
+                font-size: 2rem;
+                padding: 8px;
+                color: white;
+                .feather{
+                    &:hover{
+                        color: #584426;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .volume-control{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                font-size: 2rem;
+                padding: 8px;
+                color: white;
+                .icon-volume-1:hover{
+                    cursor: pointer;
+                }
+                .volume-progress{
+                    position: relative;
+                    width: 120px;
+                    height: 10px;
+                    background: white;
+                    margin: 0 10px;
+                    .progress{
+                        position:absolute;
+                        width: 0%;
+                        height: 100%;
+                        background-color: #b11b1b;
+                        transition: all .5s ease;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                        &::after{
+                            content: "";
+                            width: 15px;
+                            height: 15px;
+                            position: absolute;
+                            right: -1px;
+                            left: 96.2%;
+                            top: -4px;
+                            border: 1px solid #b11b1b;
+                            background-color: #b11b1b;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+
+        }
+        .video-cover{
+            transition: all .5s ease;
+            background-color: #cccccc44;
+            width: 100%;
+            height: 93%;
+            position: absolute;
+            top:0;
+            display: none;
+            z-index: 1;
+            .feather{
+                font-size: 6rem;
+                color: white;
+                position: absolute;
+                transform: translate(500px,300px);
+            }
+        }
+        video{
+            width: 100%;
+            height: 100%;
+           
+        }
+        &:hover > .video-cover{
+            cursor: pointer;
+            display: block;
+        }
+    }
+    .Video-container{
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        .playlist{
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            .playlist-item{
+                width: 250px;
+                height: 150px;
+                margin: 10px 0;
+               video{
+                 width: 100%;
+                height: 100%;
+               }
+            }
+        }
+    }
+}
